@@ -19,15 +19,13 @@ public:
   }
 
   // Setters
-  void setName(string name)
-  {
+  void setName(string name) {
     checkName(name);
     this->name = name;
   }
 
   // Getters
-  string getName()
-  {
+  string getName() {
     return name;
   }
   string getID()
@@ -37,18 +35,18 @@ public:
   
   // Methods
   virtual void displayInfo() = 0;
-  virtual string type() {return "Not Set"; }
+  // virtual string type() = 0;
 
   // Exception Handiling
   void checkName(string name) {
     if (name.size() < 5 || name.size() > 20) {
-      cout << type();
+      // cout << type();
       throw NameErrors();
     }
     for (int i = 0; i < name.size(); i++)
     {
-      if (name[i] < 65 && name[i] > 90 || name[i] < 97 && name[i] > 122) {
-        cout << type();
+      if ((name[i] < 65 || name[i] > 122) || (name[i] > 90 && name[i] < 97)) {
+        // cout << type();
         throw NameErrors();
       }
     }
@@ -61,17 +59,17 @@ public:
   };
   void checkID(string id){
     if (id.size() != 14) {
-      cout << type();
+      // cout << type();
       throw IDError();
     }
     for (int i = 0; i < id.size(); i++) {
       if (!(id[i] >= 48 && id[i] <= 57)) {
-        cout << type();
+        // cout << type();
         throw IDError();
       }
     }
   }
-  class IDError{
+  class IDError {
   public:
     void idError()
     {

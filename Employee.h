@@ -68,36 +68,33 @@ public:
   {
     if (password.size() < 8 || password.size() > 20)
     {
-      cout << type();
+      // cout << type();
       throw PasswordErrors();
     }
     for (int i = 0; i < password.size(); i++)
     {
       if (password[i] == ' ')
       {
-        cout << type();
+        // cout << type();
         throw PasswordErrors();
       }
     }
   }
-  class PasswordErrors
-  {
+  class PasswordErrors {
   public:
     void passError()
     {
       cout << " Password size must be >= 8 chars and <= 20 chars with no white spaces!" << endl;
     }
   };
-  void checkSalary(double salary)
-  {
+  void checkSalary(double salary) {
     if (salary < 5000)
     {
-      cout << type();
+      // cout << type();
       throw SalaryError();
     }
   }
-  class SalaryError
-  {
+  class SalaryError {
   public:
     void salary_Error()
     {

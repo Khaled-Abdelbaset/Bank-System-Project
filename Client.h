@@ -22,14 +22,13 @@ public:
   }
 
   // Getters
-  double getBalance()
-  {
+  double getBalance() {
     return balance;
   }
 
   // Methods
-  double deposit(double amount)
-  {
+  string type() {return "Client"; }
+  double deposit(double amount) {
     balance += amount;
     return balance;
   }
@@ -58,24 +57,22 @@ public:
     }
     return balance;
   }
-  void displayInfo()
-  {
-    cout << "Client Name: " << getName() << endl;
-    cout << "Client ID: " << getID() << endl;
-    cout << "Client Balance: " << balance << endl;
+  void displayInfo() {
+    cout << type() << " Name: " << getName() << endl;
+    cout << type() << " ID: " << getID() << endl;
+    cout << type() << " Balance: " << balance << endl;
     cout << endl;
   }
-  string type() {return "Client"; }
 
   // Exception Handiling
   void checkPinCode(string pinCode) {
     if (pinCode.size() != 4) {
-      cout << type();
+      // cout << type();
       throw PinCodeErrors();
     }
     for (int i = 0; i < pinCode.size(); i++) {
       if (!(pinCode[i] >= 48 && pinCode[i] <= 57)) {
-        cout << type();
+        // cout << type();
         throw PinCodeErrors();
       }
     }
@@ -87,9 +84,8 @@ public:
     }
   };
   void checkBalance(double balance) {
-    if (balance < 1500)
-    {
-      cout << type();
+    if (balance < 1500) {
+      // cout << type();
       throw BalanceError();
     }
   }
