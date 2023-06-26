@@ -17,7 +17,7 @@ int main() {
 
   Admin a1;
   try {
-    a1 = Admin("Salah", "12345683162340", "12345hgd", 5000);
+    a1 = Admin("Salah", "12345683162340", "12345hgs", 5000);
     a1.displayInfo();
 
   } catch(Person::NameErrors n) {
