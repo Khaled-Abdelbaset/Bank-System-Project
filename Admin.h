@@ -6,10 +6,9 @@ public:
   Admin(string name, string id, string password, double salary) : Employee(name, id, password, salary) {}
   // Methods
   string type() { return "Admin"; }
-  class EmployeeInfo
-  {
+  class EmployeeInfo {
   public:
-    void displayClientInfo(Employee &e){
+    void displayEmployeeInfo(Employee &e){
       e.displayInfo();
     }
     void editName(Employee &e, string name) {
