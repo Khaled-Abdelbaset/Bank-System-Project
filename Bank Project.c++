@@ -27,33 +27,12 @@ int main() {
   Client::numberOfClients();
 
   Admin a1, a2, a3;
+  Employee e1, e2;
+
   try {
     a1 = Admin("Ahmed", "12345683162340", "12345hgd", 5000);
     a2 = Admin("Salah", "12345683162340", "12345hgd", 5000);
     a3 = Admin("Salah", "12345683162340", "12345hgd", 5000);
-  }
-  catch (Validation::Name n)
-  {
-    n.nameError();
-  }
-  catch (Validation::ID i)
-  {
-    i.idError();
-  }
-  catch (Validation::Password p)
-  {
-    p.passwordError();
-  }
-  catch (Validation::Salary b)
-  {
-    b.salaryError();
-  }
-  a1.displayInfo();
-  a2.displayInfo();
-  Admin::numberOfAdmins();
-
-  Employee e1, e2;
-  try {
     e1 = Employee("Ahmed", "12345683162340", "12345hgd", 5000);
     e2 = Employee("Salah", "12345683162340", "12345hgd", 5000);
   }
@@ -69,10 +48,15 @@ int main() {
   {
     p.passwordError();
   }
-  catch (Validation::Salary b)
+  catch (Validation::Salary s)
   {
-    b.salaryError();
+    s.salaryError();
   }
+  
+  a1.displayInfo();
+  a2.displayInfo();
+  Admin::numberOfAdmins();
+
   e1.displayInfo();
   e2.displayInfo();
   Employee::numberOfEmployees();
