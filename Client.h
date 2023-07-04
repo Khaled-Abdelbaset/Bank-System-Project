@@ -9,7 +9,7 @@ public:
   }
   Client(string name, string id, string password, double b) : Person(name, id, password)
   {
-    checkBalance(b);
+    Validation::checkBalance(b);
     balance = b;
     counter++;
   }
@@ -48,18 +48,7 @@ public:
 
   // Exception Handiling
 
-  void checkBalance(double balance) {
-    if (balance < 1500) {
-      throw BalanceError();
-    }
-  }
-  class BalanceError {
-  public:
-    void balanceError()
-    {
-      cout << " Minimum balance to make account is 1500!" << endl;
-    }
-  };
+
   
 };
 

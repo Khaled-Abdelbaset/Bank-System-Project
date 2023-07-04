@@ -1,6 +1,7 @@
 #include "Client.h"
 
 class Employee : public Person {
+protected:
   Client cl;
   double salary;
   static int counter;
@@ -10,14 +11,14 @@ public:
     salary = 0;
   }
   Employee(string name, string id, string password, double salary) : Person(name, id, password) {
-    checkSalary(salary);
+    Validation::checkSalary(salary);
     this->salary = salary;
   }
 
   // Setters
 
   void setSalary(double salary) {
-    checkSalary(salary);
+    Validation::checkSalary(salary);
     this->salary = salary;
   }
 
@@ -29,7 +30,7 @@ public:
 
   // Methods
   static int numberOfEmployees() {
-    return counter;
+    cout << "Number Of Employees: " << counter << endl;
   }
   void displayInfo() {
     Person::displayInfo();
@@ -52,21 +53,6 @@ public:
     }
     void transfer(Client &client, Client &transTo, double amount) {
       client.transfer(transTo, amount);
-    }
-  };
-  
-  // Exception Handiling
-  void checkSalary(double salary) {
-    if (salary < 5000)
-    {
-      throw SalaryError();
-    }
-  }
-  class SalaryError {
-  public:
-    void salary_Error()
-    {
-      cout << " Minimum salary not less than 5000!" << endl;
     }
   };
 };

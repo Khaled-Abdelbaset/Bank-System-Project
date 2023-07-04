@@ -4,14 +4,20 @@ int main() {
   Client c1, c2;
   try {
     c1 = Client("khaled", "12340678920340", "1454uigf", 2500);
-    c2 = Client("Sayed", "12340678920340", "1454lkj'", 2500);
-  } catch(Person::NameErrors n) {
+    c2 = Client("Saye", "12340678920340", "1454lkj'", 2500);
+  } catch (Validation::Name n) {
     n.nameError();
-  } catch(Person::IDError i) {
+  }
+  catch (Validation::ID i)
+  {
     i.idError();
-  } catch (Person::PasswordErrors p) {
+  }
+  catch (Validation::Password p)
+  {
     p.passError();
-  } catch (Client::BalanceError b) {
+  }
+  catch (Validation::Balance b)
+  {
     b.balanceError();
   }
 
