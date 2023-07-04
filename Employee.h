@@ -2,26 +2,20 @@
 
 class Employee : public Person {
   Client cl;
-  string password;
   double salary;
+  static int counter;
 
 public:
   Employee() {
     salary = 0;
   }
-  Employee(string name, string id, string password, double salary) : Person(name, id) {
-    checkPassword(password);
-    this->password = password;
+  Employee(string name, string id, string password, double salary) : Person(name, id, password) {
     checkSalary(salary);
     this->salary = salary;
   }
 
   // Setters
-  void setPassword(string password)
-  {
-    checkPassword(password);
-    this->password = password;
-  }
+
   void setSalary(double salary) {
     checkSalary(salary);
     this->salary = salary;
@@ -34,11 +28,12 @@ public:
   }
 
   // Methods
-  virtual string type() { return "Employee"; }
+  static int numberOfEmployees() {
+    return counter;
+  }
   void displayInfo() {
-    cout << type() << " Name: " << getName() << endl;
-    cout << type() << " ID: " << getID() << endl;
-    cout << type() << " Salary: " << salary << endl;
+    Person::displayInfo();
+    cout << " Salary: " << salary << endl;
     cout << endl;
   }
   class ClientInfo {
@@ -48,9 +43,6 @@ public:
     }
     void editName(Client &client, string name) {
       client.setName(name);
-    }
-    void editPinCode(Client &client, string pinCode) {
-      client.setPinCode(pinCode);
     }
     void deposit(Client &client, double amount) {
       client.deposit(amount);
@@ -64,33 +56,9 @@ public:
   };
   
   // Exception Handiling
-  void checkPassword(string password)
-  {
-    if (password.size() < 8 || password.size() > 20)
-    {
-      // cout << type();
-      throw PasswordErrors();
-    }
-    for (int i = 0; i < password.size(); i++)
-    {
-      if (password[i] == ' ')
-      {
-        // cout << type();
-        throw PasswordErrors();
-      }
-    }
-  }
-  class PasswordErrors {
-  public:
-    void passError()
-    {
-      cout << " Password size must be >= 8 chars and <= 20 chars with no white spaces!" << endl;
-    }
-  };
   void checkSalary(double salary) {
     if (salary < 5000)
     {
-      // cout << type();
       throw SalaryError();
     }
   }
@@ -102,3 +70,5 @@ public:
     }
   };
 };
+
+int Employee::counter = 0;

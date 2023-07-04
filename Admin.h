@@ -1,11 +1,14 @@
 #include "Employee.h"
 
 class Admin : public Employee {
+  static int counter;
 public:
   Admin() {}
   Admin(string name, string id, string password, double salary) : Employee(name, id, password, salary) {}
   // Methods
-  string type() { return "Admin"; }
+  static int numberOfEmployees() {
+    return counter;
+  }
   class EmployeeInfo {
   public:
     void displayEmployeeInfo(Employee &e){
@@ -22,3 +25,5 @@ public:
     }
   };
 };
+
+int Admin::counter = 0;

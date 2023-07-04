@@ -4,18 +4,18 @@
 using namespace std;
 
 class Person {
-  string name;
-  string id;
-
+  string name, id, password;
 public:
   Person() {
-    name = id = "Not Set";
+    name = id = password = "Not Set";
   }
-  Person(string name, string id) {
+  Person(string name, string id, string password) {
     checkName(name);
     this->name = name;
     checkID(id);
     this->id = id;
+    checkPassword(password);
+    this->password = password;
   }
 
   // Setters
@@ -23,7 +23,11 @@ public:
     checkName(name);
     this->name = name;
   }
-
+  void setPassword(string password) {
+    checkPassword(password);
+    this->password = password;
+  }
+  
   // Getters
   string getName() {
     return name;
@@ -34,19 +38,18 @@ public:
   }
   
   // Methods
-  virtual void displayInfo() = 0;
-  // virtual string type() = 0;
+  virtual void displayInfo() {
+    cout << " Name: " << name << endl;
+    cout << " ID: " << id << endl;
+  };
 
   // Exception Handiling
   void checkName(string name) {
     if (name.size() < 5 || name.size() > 20) {
-      // cout << type();
       throw NameErrors();
     }
-    for (int i = 0; i < name.size(); i++)
-    {
-      if ((name[i] < 65 || name[i] > 122) || (name[i] > 90 && name[i] < 97)) {
-        // cout << type();
+    for (int i = 0; i < name.size(); i++) {
+      if (!isalpha(name[i])) {
         throw NameErrors();
       }
     }
@@ -59,12 +62,10 @@ public:
   };
   void checkID(string id){
     if (id.size() != 14) {
-      // cout << type();
       throw IDError();
     }
     for (int i = 0; i < id.size(); i++) {
-      if (!(id[i] >= 48 && id[i] <= 57)) {
-        // cout << type();
+      if (!isdigit(id[i])) {
         throw IDError();
       }
     }
@@ -74,6 +75,28 @@ public:
     void idError()
     {
       cout << " ID must be 14 numeric characters!" << endl;
+    }
+  };
+  void checkPassword(string password)
+  {
+    if (password.size() < 8 || password.size() > 20)
+    {
+      throw PasswordErrors();
+    }
+    for (int i = 0; i < password.size(); i++)
+    {
+      if (password[i] == ' ')
+      {
+        throw PasswordErrors();
+      }
+    }
+  }
+  class PasswordErrors
+  {
+  public:
+    void passError()
+    {
+      cout << " Password size must be >= 8 chars and <= 20 chars with no white spaces!" << endl;
     }
   };
 };

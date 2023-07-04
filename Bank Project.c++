@@ -1,63 +1,55 @@
 #include "Admin.h"
 
-
 int main() {
   Client c1, c2;
   try {
-    c1 = Client("khaled", "12340678920340", "1454", 2500);
-    c1.displayInfo();
+    c1 = Client("khaled", "12340678920340", "1454uigf", 2500);
+    c2 = Client("Sayed", "12340678920340", "1454lkj'", 2500);
   } catch(Person::NameErrors n) {
     n.nameError();
   } catch(Person::IDError i) {
     i.idError();
-  } catch(Client::PinCodeErrors p) {
-    p.pinError();
-  } catch(Client::BalanceError b) {
+  } catch (Person::PasswordErrors p) {
+    p.passError();
+  } catch (Client::BalanceError b) {
     b.balanceError();
   }
 
-  try {
-    c2 = Client("Omar", "12340678920340", "1454", 2500);
-    c2.displayInfo();
-  } catch(Person::NameErrors n) {
-    n.nameError();
-  } catch(Person::IDError i) {
-    i.idError();
-  } catch(Client::PinCodeErrors p) {
-    p.pinError();
-  } catch(Client::BalanceError b) {
-    b.balanceError();
-  }
+  c1.transfer(c2, 300);
+  c1.displayInfo();
+  c2.displayInfo();
 
-  Employee e1;
-  try {
-    e1 = Employee("Ahmed", "12345683162340", "12345hgd", 5000);
-    e1.displayInfo();
-  } catch(Person::NameErrors n) {
-    n.nameError();
-  } catch(Person::IDError i) {
-    i.idError();
-  }
-  catch (Employee::PasswordErrors p) {
-    p.passError();
-  }
-  catch (Employee::SalaryError s) {
-    s.salary_Error();
-  }
+  Client::numberOfClients();
 
-  Admin a1;
-  try {
-    a1 = Admin("Sayed", "12345683162340", "12345hfg", 8000);
-    a1.displayInfo();
-  } catch(Person::NameErrors n) {
-    n.nameError();
-  } catch(Person::IDError i) {
-    i.idError();
-  } catch (Admin::PasswordErrors p) {
-    p.passError();
-  } catch (Admin::SalaryError s) {
-    s.salary_Error();
-  }
+  // Employee e1;
+  // try {
+  //   e1 = Employee("Ahmed", "12345683162340", "12345hgd", 5000);
+  //   e1.displayInfo();
+  // } catch(Person::NameErrors n) {
+  //   n.nameError();
+  // } catch(Person::IDError i) {
+  //   i.idError();
+  // }
+  // catch (Person::PasswordErrors p) {
+  //   p.passError();
+  // }
+  // catch (Employee::SalaryError s) {
+  //   s.salary_Error();
+  // }
+
+  // Admin a1;
+  // try {
+  //   a1 = Admin("Sayed", "12345683162340", "12345hfg", 8000);
+  //   a1.displayInfo();
+  // } catch(Person::NameErrors n) {
+  //   n.nameError();
+  // } catch(Person::IDError i) {
+  //   i.idError();
+  // } catch (Person::PasswordErrors p) {
+  //   p.passError();
+  // } catch (Admin::SalaryError s) {
+  //   s.salary_Error();
+  // }
 
   return 0;
 }
