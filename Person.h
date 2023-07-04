@@ -1,7 +1,4 @@
-#include <iostream>
-#include <string>
 #include "Validation.h"
-using namespace std;
 
 class Person {
   string name, id, password;
@@ -39,7 +36,7 @@ public:
   
   // Methods
   virtual void displayInfo() {
-    cout << " Name: " << name << endl;
-    cout << " ID: " << id << endl;
+    cout << "Name: " << name << endl;
+    cout << "ID: " << id << endl;
   };
 };

@@ -13,6 +13,7 @@ public:
   Employee(string name, string id, string password, double salary) : Person(name, id, password) {
     Validation::checkSalary(salary);
     this->salary = salary;
+    counter++;
   }
 
   // Setters
@@ -29,14 +30,15 @@ public:
   }
 
   // Methods
-  static int numberOfEmployees() {
-    cout << "Number Of Employees: " << counter << endl;
+  static void numberOfEmployees() {
+    cout << "Number Of Employees: " << counter << endl << endl;
   }
   void displayInfo() {
     Person::displayInfo();
-    cout << " Salary: " << salary << endl;
+    cout << "Salary: " << salary << endl;
     cout << endl;
   }
+  
   class ClientInfo {
   public:
     void displayClientInfo(Client &client) {

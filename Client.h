@@ -20,9 +20,6 @@ public:
   }
 
   // Methods
-  static void numberOfClients() {
-    cout << "Number Of Clients: " << counter << endl;
-  }
   double deposit(double amount) {
     balance += amount;
     return balance;
@@ -42,14 +39,13 @@ public:
   }
   void displayInfo() {
     Person::displayInfo();
-    cout << " Balance: " << balance << endl;
+    cout << "Balance: " << balance << endl;
     cout << endl;
   }
-
-  // Exception Handiling
-
-
-  
+  static void numberOfClients() {
+    cout << "Number Of Clients: " << counter << endl
+         << endl;
+  }
 };
 
 int Client::counter = 0;

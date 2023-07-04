@@ -10,8 +10,8 @@ public:
   }
   
   // Methods
-  static int numberOfEmployees() {
-    cout << "Number Of Employees: " << counter << endl;
+  static void numberOfAdmins() {
+    cout << "Number Of Admins: " << counter << endl << endl;
   }
   
   class EmployeeInfo {

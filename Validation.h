@@ -4,7 +4,6 @@ using namespace std;
 
 class Validation {
 public:
-
   // Name
   static void checkName(string name) {
     if (name.size() < 5 || name.size() > 20) {
@@ -62,7 +61,7 @@ public:
   }
   class Password {
   public:
-    void passError()
+    void passwordError()
     {
       cout << " Password size must be >= 8 chars and <= 20 chars with no white spaces!" << endl;
     }
@@ -92,7 +91,7 @@ public:
   }
   class Salary {
   public:
-    void salary_Error()
+    void salaryError()
     {
       cout << " Minimum salary not less than 5000!" << endl;
     }
