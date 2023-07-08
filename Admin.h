@@ -3,7 +3,6 @@
 class Admin : public Employee {
   static int counter;
 public:
-  Admin() {}
   Admin(string name, string id, string password, double salary) : Employee(name, id, password, salary) {
     counter++;
     Employee::counter--;

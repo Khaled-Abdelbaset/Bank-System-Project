@@ -2,14 +2,12 @@
 
 class Employee : public Person {
 protected:
-  Client cl;
   double salary;
   static int counter;
 
 public:
-  Employee() {
-    salary = 0;
-  }
+  // Employee() {
+  // }
   Employee(string name, string id, string password, double salary) : Person(name, id, password) {
     Validation::checkSalary(salary);
     this->salary = salary;
@@ -38,25 +36,15 @@ public:
     cout << "Salary: " << salary << endl;
     cout << endl;
   }
-  
-  class ClientInfo {
-  public:
-    void displayClientInfo(Client &client) {
-      client.displayInfo();
-    }
-    void editName(Client &client, string name) {
-      client.setName(name);
-    }
-    void deposit(Client &client, double amount) {
-      client.deposit(amount);
-    }
-    void withdraw(Client &client, double amount) {
-      client.withdraw(amount);
-    }
-    void transfer(Client &client, Client &transTo, double amount) {
-      client.transfer(transTo, amount);
-    }
-  };
+
+  void addClient(Client &client) {
+    allClients.push_back(client);
+  }
+  void editClient(Client &client, string name, string password, double balance) {
+    client.setName(name);
+    client.setPassword(password);
+    client.setBalance(balance);
+  }
 };
 
 int Employee::counter = 0;

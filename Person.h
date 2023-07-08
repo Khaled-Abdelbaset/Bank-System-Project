@@ -1,4 +1,5 @@
 #include "Validation.h"
+#include <fstream>
 
 class Person {
   string name, id, password;
@@ -32,6 +33,10 @@ public:
   string getID()
   {
     return id;
+  }
+  string getPassword()
+  {
+    return password;
   }
   
   // Methods
