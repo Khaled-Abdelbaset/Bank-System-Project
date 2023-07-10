@@ -1,5 +1,4 @@
 #include "Person.h"
-#include <vector>
 
 class Client : public Person {
   double balance;
@@ -53,5 +52,5 @@ public:
     cout << "Number Of Clients: " << counter << endl;
   }
 };
-  vector<Client> allClients;
-  int Client::counter = 0;
+static vector<Client> allClients;
+int Client::counter = 0;

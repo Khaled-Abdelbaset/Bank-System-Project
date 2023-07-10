@@ -1,5 +1,6 @@
 #include "Client.h"
 
+
 class Employee : public Person {
 protected:
   double salary;
@@ -46,5 +47,4 @@ public:
     client.setBalance(balance);
   }
 };
-
 int Employee::counter = 0;
