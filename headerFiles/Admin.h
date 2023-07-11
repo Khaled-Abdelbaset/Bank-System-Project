@@ -14,10 +14,12 @@ public:
   static void numberOfAdmins() {
     cout << "Number Of Admins: " << counter << endl << endl;
   }
+  
   void addEmployee(Employee &employee) {
     // Cases
     allEmployees.push_back(employee);
   }
+  
   Employee* searchEmployee(string id) {
     for(int i = 0; i < allEmployees.size(); i++) {
       if (id == allEmployees[i].getID()) {
@@ -27,6 +29,7 @@ public:
     throw Validation::NotFound();
     return nullptr;
   }
+  
   void listEmployee() {
     if(allEmployees.size() == 0) {
       throw Validation::NotFound();
@@ -39,6 +42,7 @@ public:
       cout << c.getSalary() << endl;
     }
   }
+  
   void editEmployee(string id, string name, string password, double salary) {
     if (searchEmployee(id) == nullptr) {
       throw Validation::NotFound();

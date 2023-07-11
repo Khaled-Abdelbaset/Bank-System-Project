@@ -21,19 +21,27 @@ public:
     Validation::checkName(name);
     this->name = name;
   }
+  
   void setPassword(string password) {
     Validation::checkPassword(password);
     this->password = password;
+  }
+
+  void setID(string id) {
+    Validation::checkID(id);
+    this->id = id;
   }
   
   // Getters
   string getName() {
     return name;
   }
+  
   string getID()
   {
     return id;
   }
+  
   string getPassword()
   {
     return password;

@@ -31,14 +31,17 @@ public:
   static void numberOfEmployees() {
     cout << "Number Of Employees: " << counter << endl << endl;
   }
+  
   void displayInfo() {
     Person::displayInfo();
     cout << "Salary: " << salary << endl;
     cout << endl;
   }
+  
   void addClient(Client &client) {
     allClients.push_back(client);
   }
+  
   Client* searchClient(string id) {
     for(int i = 0; i < allClients.size(); i++) {
       if (id == allClients[i].getID()) {
@@ -48,6 +51,7 @@ public:
     throw Validation::NotFound();
     return nullptr;
   }
+  
   void listClient() {
     if(allClients.size() == 0) {
       throw Validation::NotFound();
@@ -60,6 +64,7 @@ public:
       cout << c.getBalance() << endl; 
     }
   }
+  
   void editClient(string id, string name, string password, double balance) {
     if (searchClient(id) == nullptr) {
       throw Validation::NotFound();

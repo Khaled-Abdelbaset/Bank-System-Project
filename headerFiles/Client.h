@@ -30,6 +30,7 @@ public:
     balance += amount;
     return balance;
   }
+
   double withdraw(double amount) {
     if (balance < amount) {
       cout << "Amount exceeded balance" << endl;
@@ -39,10 +40,12 @@ public:
     }
     return balance;
   }
+
   void transfer(Client &obj, double amount) {
     withdraw(amount);
     obj.deposit(amount);
   }
+  
   void displayInfo() {
     Person::displayInfo();
     cout << "Balance: " << balance << endl;
