@@ -131,4 +131,15 @@ public:
       cout << "Data Not Correct, Please Edit Data" << endl;
     }
   };
+
+  // Open File
+  static void failedOpenClient() {
+    cout << "Failed to open file: Clients.txt" << endl;
+  }
+  static void failedOpenEmployee() {
+    cout << "Failed to open file: Clients.txt" << endl;
+  }
+  static void failedOpenAdmin() {
+    cout << "Failed to open file: Clients.txt" << endl;
+  }
 };

@@ -5,17 +5,18 @@ class Parser {
 public:
   static vector<string> split(string line) {
     vector<string> data;
-    int start = 0, seperator = line.find(',', start);
-    while(seperator < line.size()) {
-      string item = line.substr(start, seperator - start);
+    int st = 0;
+    int sep = line.find(',', st);
+    while(sep < line.size()) {
+      string item = line.substr(st, sep - st);
       if (item[0] == ' ') {
         item.erase(0, 1);
       }
       data.push_back(item);
-      start = seperator + 1;
-      seperator = line.find(',', start);
+      st = sep + 1;
+      sep = line.find(',', st);
     }
-    data.push_back(line.substr(start));
+    data.push_back(line.substr(st));
     return data;
   }
 
