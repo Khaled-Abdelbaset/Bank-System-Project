@@ -1,0 +1,4 @@
+1- if data wrong do not make object;
+2- when client created add to add client;
+3- set and get
+4- repeated id

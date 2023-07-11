@@ -1,7 +1,9 @@
+#pragma
 #include <iostream>
 #include <string>
 #include <vector>
 #include <fstream>
+
 using namespace std;
 
 
@@ -40,11 +42,23 @@ public:
         throw ID();
       }
     }
+    // for(int i = 0; i < allClients.size(); i++) {
+    //   if(id == allClients[i].getID()) {
+    //     throw RepeatedID();
+    //     break;
+    //   }
+    // }
   }
   class ID {
   public:
     void idError() {
       cout << " ID must be 14 numeric characters!" << endl;
+    }
+  };
+  class RepeatedID {
+  public:
+    void repeatedID() {
+      cout << "This ID Had Been Taken" << endl;
     }
   };
 
@@ -97,6 +111,24 @@ public:
     void salaryError()
     {
       cout << " Minimum salary not less than 5000!" << endl;
+    }
+  };
+
+  class NotFound {
+  public:
+    void notFound() {
+      cout << "Not found in system" << endl;
+    }
+  };
+  
+  static void notSet(string name, string id, string Password, double balance) {
+    if(name == "Not Set" || id == "Not Set" || Password == "Not Set" || balance == 0) {
+      throw WrongData();
+    }
+  }
+  class WrongData{
+    void wrongData() {
+      cout << "Data Not Correct, Please Edit Data" << endl;
     }
   };
 };

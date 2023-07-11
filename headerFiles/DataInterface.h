@@ -1,3 +1,4 @@
+#pragma
 #include "Admin.h"
 
 

@@ -1,3 +1,4 @@
+#pragma
 #include "Validation.h"
 
 class Person {

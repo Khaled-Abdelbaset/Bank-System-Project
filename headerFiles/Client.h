@@ -1,3 +1,4 @@
+#pragma
 #include "Person.h"
 
 class Client : public Person {
@@ -52,5 +53,6 @@ public:
     cout << "Number Of Clients: " << counter << endl;
   }
 };
+
 static vector<Client> allClients;
 int Client::counter = 0;
