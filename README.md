@@ -3,7 +3,7 @@
 Bank System
 Create Bank system app which contains 3 modules:
 
-1. Client Module
+1. Client Module: 
   a. Each client contains: int id, string name, string password, double balance.
   b. Client can login to the system using id and password.
   c. Client can deposit amount of money
@@ -11,7 +11,7 @@ Create Bank system app which contains 3 modules:
   e. Client can check his balance
   f. Client can transfer money to another client
 
-2. Employee Module
+2. Employee Module: 
   a. Each employee contains: string name, int id, string password, double salary.
   b. Employee can login to the system by id and password
   c. Employee can add new Client
@@ -20,7 +20,7 @@ Create Bank system app which contains 3 modules:
   f. Employee can edit info of client
   g. Employee can display his info
 
-3. Admin Module
+3. Admin Module: 
   a. Admin will be the same like Employee
   b. Admin can add new Employee
   c. Admin can search for Employee
@@ -64,12 +64,12 @@ Create Bank system app which contains 3 modules:
 * Hint: you can create Validation class contains all validation that you will need as static methods, and use these validation in rest of other classes.
 
 => Phase 2:
-1.Create the following text files
+1.Create the following text files: 
   a.Clients.txt to save client info
   b.Employee.txt to save employee info
   c.Admin.txt to save admin info
 
-2.Create DataSourceInterface as abstract class contains the following
+2.Create DataSourceInterface as abstract class contains the following: 
   a.Abstract void addClient(Client )
   b.Abstract void addEmployee(Employee)
   c.Abstract void addAdmin(Admin)
@@ -80,7 +80,7 @@ Create Bank system app which contains 3 modules:
   h.Abstract void removeAllEmployees()
   i.Abstract void removeAllAdmins()
 
-3.Create FileManager Class to implement DataSourceinterface
+3.Create FileManager Class to implement DataSourceinterface: 
   a.addClient should save client info in clients.txt
   b.addEmployee should save employee info in employees.txt
   c.addAdmin should save employee info in admins.txt
@@ -109,7 +109,7 @@ Create Bank system app which contains 3 modules:
   c.static Employee parseToEmployee(string line).
   d.static Admin parseToAdmin(string line).
 
-7.Create FilesHelper save and get from txt files contains:
+7.Create FilesHelper save and get from txt files contains: 
   a.static void saveLast(string fileName, int id)
   b.static int getLast(string fileName).
   c.static void saveClient(Client c).
@@ -120,13 +120,13 @@ Create Bank system app which contains 3 modules:
   h.static void clearFile(string fileName, string lastIdFile).
 
 => Phase 3:
-1.Create ClientManger class contains:
+1.Create ClientManger class contains: 
   a.static void printClientMenu().
   b.static void updatePassword(Person* person).
   c.static Client* login(int id, string password).
   d.static bool clientOptions(Client* client).
 
-2.Create EmployeeManager class contains:
+2.Create EmployeeManager class contains: 
   a.static void printClientMenu().
   b.static void newClient(Employee* employee).
   c.static void listAllClients(Employee* employee).
@@ -135,12 +135,12 @@ Create Bank system app which contains 3 modules:
   f.static Client* login(int id, string password).
   g.static bool employeeOptions(Client* client).
 
-3.Create AdminManager class contains:
+3.Create AdminManager class contains: 
   a.static void printClientMenu().
   b.static Client* login(int id, string password).
   c.static bool AdminOptions(Client* client).
 
-4.Create Screens class contains:
+4.Create Screens class contains: 
   a.static void bankName().
   b.static void welcome().
   c.static void loginOptions().
